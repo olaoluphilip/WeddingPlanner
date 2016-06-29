@@ -1,0 +1,54 @@
+AppBundle\Entity\Items:
+    type: entity
+    table: items
+    repositoryClass: AppBundle\Repository\ItemsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '50'
+        amount:
+            type: float
+        status:
+            type: string
+            length: '20'
+        startDate:
+            type: date
+        endDate:
+            type: string
+            length: 255
+        amountPaid:
+            type: float
+        balance:
+            type: float
+        paymentDueDate:
+            type: date
+    manyToMany:
+        vendors:
+            targetEntity: Vendors
+            inversedBy: items
+            joinTable:
+                name: items_vendors
+            joinColumns:
+                items_id:
+                    referencedColumnName: id
+            inverseJoinColumns:
+                vendors_id:
+                    referencedColumnName: id
+        events:
+            targetEntity: Events
+            inversedBy: items
+            joinTable:
+                name: items_events
+            joinColumns:
+                items_id:
+                    referencedColumnName: id
+            inverseJoinColumns:
+                events_id:
+                    referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,39 @@
+AppBundle\Entity\Couple:
+    type: entity
+    table: couple
+    repositoryClass: AppBundle\Repository\CoupleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstname:
+            type: string
+            length: '25'
+        middlename:
+            type: string
+            length: '25'
+        lastname:
+            type: string
+            length: '25'
+        email:
+            type: string
+            length: '50'
+        phone:
+            type: string
+            length: '25'
+        sex:
+            type: string
+            length: '6'
+        dob:
+            type: date
+        role:
+            type: string
+            length: '5'
+        image:
+            type: string
+            length: '50'
+            nullable: true
+    lifecycleCallbacks: {  }

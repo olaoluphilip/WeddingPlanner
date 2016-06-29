@@ -1,0 +1,29 @@
+AppBundle\Entity\Events:
+    type: entity
+    table: events
+    repositoryClass: AppBundle\Repository\EventsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '50'
+        venue:
+            type: string
+            length: '100'
+        numberOfGuests:
+            type: integer
+        date:
+            type: date
+    manyToMany:
+        guests:
+            targetEntity: Guests
+            mappedBy: events
+        items:
+            targetEntity: Items
+            mappedBy: events
+    lifecycleCallbacks: {  }

@@ -1,0 +1,58 @@
+{% extends 'login-base.html.twig' %}
+{% block title %} Registration {% endblock %}
+{% block loginDiv %}
+
+    {{ form_start(form, { 'attr': {'class': 'form-horizontal'}} ) }}
+
+
+
+
+    <div class="control-group">
+        <div class="input-prepend">
+            <span class="add-on"><span class="icon-user"></span></span>
+            {{ form_widget(form.username, { 'attr': {'placeholder': 'Name'}} ) }}
+        </div>
+    </div>
+    <div class="dr"><span></span></div>
+    <div class="control-group">
+        <div class="input-prepend">
+            <span class="add-on"><span class="icon-lock"></span></span>
+            {{ form_widget(form.plainPassword.first, { 'attr': {'placeholder': 'Password'}} ) }}
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="input-prepend">
+            <span class="add-on"><span class="icon-lock"></span></span>
+            {{ form_widget(form.plainPassword.second, { 'attr': {'placeholder': 'Re-Password'}} ) }}
+        </div>
+    </div>
+    <div class="dr"><span></span></div>
+    <div class="control-group">
+        <div class="input-prepend">
+            <span class="add-on"><span class="icon-envelope"></span></span>
+            {{ form_widget(form.email, { 'attr': {'placeholder': 'E-mail'}} ) }}
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span8">
+            <div class="control-group" style="margin-top: 5px;">
+                <label class="checkbox">{{ form_widget(form.termsAccepted) }} I agree with terms..</label>
+            </div>
+        </div>
+        <div class="span4">
+            <button type="submit" class="btn btn-block">Registration</button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+
+    <div class="dr"><span></span></div>
+    <div class="controls">
+        <div class="row-fluid">
+            <div class="span12">
+                <a href="{{ path('login') }}"><button class="btn btn-link">&laquo; Back</button></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,48 @@
+AppBundle\Entity\Guests:
+    type: entity
+    table: guests
+    repositoryClass: AppBundle\Repository\GuestsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstname:
+            type: string
+            length: '25'
+        lastname:
+            type: string
+            length: '25'
+        email:
+            type: string
+            length: '50'
+            nullable: true
+        phone:
+            type: string
+            length: '25'
+            nullable: true
+        sex:
+            type: string
+            length: '6'
+        role:
+            type: string
+            length: '25'
+        address:
+            type: string
+            length: '100'
+            nullable: true
+    manyToMany:
+        events:
+            targetEntity: Events
+            inversedBy: guests
+            joinTable:
+                name: guests_events
+            joinColumns:
+                guests_id:
+                    referencedColumnName: id
+            inverseJoinColumns:
+                events_id:
+                    referencedColumnName: id
+    lifecycleCallbacks: {  }

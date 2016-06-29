@@ -1,0 +1,117 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+logout:
+    path: /logout
+
+login:
+    path: /login
+    defaults: { _controller: AppBundle:Security:login}
+
+home:
+    path: /
+
+user_registration:
+    path: /register
+    defaults: { _controller: AppBundle:Registration:register }
+
+add_couple:
+    path: /couple/add
+    defaults: { _controller: AppBundle:Couple:add }
+
+update_couple:
+    path: /couple/update
+    defaults: { _controller: AppBundle:Couple:update }
+
+delete_couple:
+    path: /couple/delete
+    defaults: { _controller: AppBundle:Couple:delete }
+
+show_couple:
+    path: /couple/show
+    defaults: { _controller: AppBundle:Couple:show }
+
+list_couple:
+    path: /couple/list
+    defaults: { _controller: AppBundle:Couple:list }
+
+add_event:
+    path: /event/add
+    defaults: { _controller: AppBundle:Event:add }
+
+update_event:
+    path: /event/update
+    defaults: { _controller: AppBundle:Event:update }
+
+delete_event:
+    path: /event/delete
+    defaults: { _controller: AppBundle:Event:delete }
+
+show_event:
+    path: /event/show
+    defaults: { _controller: AppBundle:Event:show }
+
+list_event:
+    path: /event/list
+    defaults: { _controller: AppBundle:Event:list }
+
+add_guest:
+    path: /guest/add
+    defaults: { _controller: AppBundle:Guest:add }
+
+update_guest:
+    path: /guest/update
+    defaults: { _controller: AppBundle:Guest:update }
+
+delete_guest:
+    path: /guest/delete
+    defaults: { _controller: AppBundle:Guest:delete }
+
+show_guest:
+    path: /guest/show
+    defaults: { _controller: AppBundle:Guest:show }
+
+list_guest:
+    path: /guest/list
+    defaults: { _controller: AppBundle:Guest:list }
+
+add_item:
+    path: /item/add
+    defaults: { _controller: AppBundle:Item:add }
+
+update_item:
+    path: /item/update
+    defaults: { _controller: AppBundle:Item:update }
+
+delete_item:
+    path: /item/delete
+    defaults: { _controller: AppBundle:Item:delete }
+
+show_item:
+    path: /item/show
+    defaults: { _controller: AppBundle:Item:show }
+
+list_item:
+    path: /item/list
+    defaults: { _controller: AppBundle:Item:list }
+
+add_vendor:
+    path: /vendor/add
+    defaults: { _controller: AppBundle:Vendor:add }
+
+update_vendor:
+    path: /vendor/update
+    defaults: { _controller: AppBundle:Vendor:update }
+
+delete_vendor:
+    path: /vendor/delete
+    defaults: { _controller: AppBundle:Vendor:delete }
+
+show_vendor:
+    path: /vendor/show
+    defaults: { _controller: AppBundle:Vendor:show }
+
+list_vendor:
+    path: /vendor/list
+    defaults: { _controller: AppBundle:Vendor:list }

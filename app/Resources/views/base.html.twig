@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    <link href="{{ asset('css/stylesheets.css') }}" rel="stylesheet"/>
+
+    <script src="{{ asset('js/plugins/jquery/jquery-1.9.1.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/jquery/jquery-ui-1.10.1.custom.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/jquery/jquery-migrate-1.1.1.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/jquery/jquery.mousewheel.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/cookie/jquery.cookies.2.2.0.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/bootstrap.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/charts/jquery.flot.js') }}"></script>
+    <script src="{{ asset('js/plugins/charts/jquery.flot.stack.js') }}"></script>
+    <script src="{{ asset('js/plugins/charts/jquery.flot.pie.js') }}"></script>
+    <script src="{{ asset('js/plugins/charts/jquery.flot.resize.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/sparklines/jquery.sparkline.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/fullcalendar/fullcalendar.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/select2/select2.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/uniform/uniform.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/maskedinput/jquery.maskedinput-1.3.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/validation/languages/jquery.validationEngine-en.js') }}"></script>
+    <script src="{{ asset('js/plugins/validation/jquery.validationEngine.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/animatedprogressbar/animated_progressbar.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/qtip/jquery.qtip-1.0.0-rc3.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/cleditor/jquery.cleditor.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/dataTables/jquery.dataTables.min.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/fancybox/jquery.fancybox.pack.js') }}"></script>
+
+    <script src="{{ asset('js/plugins/pnotify/jquery.pnotify.min.js') }}"></script>
+    <script src="{{ asset('js/plugins/ibutton/jquery.ibutton.min.js') }}"></script>
+
+    <script src="{{ asset('js/cookies.js') }}"></script>
+    <script src="{{ asset('js/actions.js') }}"></script>
+    <script src="{{ asset('js/charts.js') }}"></script>
+    <script src="{{ asset('js/plugins.js') }}"></script>
+    <script src="{{ asset('js/settings.js') }}"></script>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="header">
+            <a class="logo" href="{{ path('home') }}"><img src="{{ asset('img/logo.png') }}" alt="Wedding Planner"/></a>
+                <ul class="header_menu">
+                    <li class="list_icon"><a href="#">&nbsp;</a></li>
+                </ul>
+        </div>
+
+        <div class="menu">
+
+            <div class="breadLine">
+                <div class="arrow"></div>
+                <div class="adminControl active">
+                    {% block user %}Hi {% endblock %}
+                </div>
+            </div>
+            <div class="admin">
+                <div class="image">
+                    <img src="{{ asset('img/users/aqvatarius.jpg') }}" class="img-polaroid"/>
+                </div>
+                <ul class="control">
+                    <li><span class="icon-comment"></span> <a href="">Messages</a> <a href="" class="caption red">12</a></li>
+                    <li><span class="icon-cog"></span> <a href="">Settings</a></li>
+                    <li><span class="icon-share-alt"></span> <a href="{{ path('logout') }}">Logout</a></li>
+                </ul>
+                <div class="info">
+                    {% block welcome %} <span>Welcome back! Your last visit: 24.10.2012 in 19:55</span> {% endblock %}
+                </div>
+            </div>
+
+            <ul class="navigation">
+                <li>
+                    <a href="{{ path('home') }}">
+                        <span class="isw-grid"></span><span class="text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="openable">
+                    <a href="#">
+                        <span class="isw-list"></span><span class="text">Couples</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ path('list_couple') }}">
+                                <span class="icon-th-large"></span><span class="text">List Couples</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('add_couple') }}">
+                                <span class="icon-th"></span><span class="text">Add Couple's Profile</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="openable">
+                    <a href="#">
+                        <span class="isw-list"></span><span class="text">Events</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ path('list_event') }}">
+                                <span class="icon-th-large"></span><span class="text">List Events</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('add_event') }}">
+                                <span class="icon-th"></span><span class="text">Add Event</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="openable">
+                    <a href="#">
+                        <span class="isw-list"></span><span class="text">Guests</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ path('list_guest') }}">
+                                <span class="icon-th-large"></span><span class="text">List Guests</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('add_guest') }}">
+                                <span class="icon-th"></span><span class="text">Add Guest</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="openable">
+                    <a href="#">
+                        <span class="isw-list"></span><span class="text">Items</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ path('list_item') }}">
+                                <span class="icon-th-large"></span><span class="text">List Items</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('add_item') }}">
+                                <span class="icon-th"></span><span class="text">Add Item</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="openable">
+                    <a href="#">
+                        <span class="isw-list"></span><span class="text">Vendors</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ path('list_vendor') }}">
+                                <span class="icon-th-large"></span><span class="text">List Vendors</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ path('add_vendor') }}">
+                                <span class="icon-th"></span><span class="text">Add Vendor</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="dr"><span></span></div>
+
+            <div class="widget-fluid">
+                <div id="menuDatepicker"></div>
+            </div>
+
+            <div class="dr"><span></span></div>
+
+            <div class="widget">
+
+                <div class="input-append">
+                    <input id="appendedInputButton" style="width: 118px;" type="text"><button class="btn" type="button">Search</button>
+                </div>
+
+            </div>
+
+            <div class="dr"><span></span></div>
+
+            <div class="widget-fluid">
+
+                <div class="wBlock clearfix">
+                    <div class="dSpace">
+                        <h3>Last visits</h3>
+                        <span class="number">6,302</span>
+                        <span>5,774 <b>unique</b></span>
+                        <span>3,512 <b>returning</b></span>
+                    </div>
+                    <div class="rSpace">
+                        <h3>Today</h3>
+                        <span class="mChartBar" sparkType="bar" sparkBarColor="white"><!--240,234,150,290,310,240,210,400,320,198,250,222,111,240,221,340,250,190--></span>
+                        <span>&nbsp;</span>
+                        <span>65% <b>New</b></span>
+                        <span>35% <b>Returning</b></span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="content">
+
+
+            <div class="breadLine">
+
+                <ul class="breadcrumb">
+                    <li><a href="#">{% block breadcrumb %} {% endblock %}</a> <span class="divider">></span></li>
+                    <li class="active">{% block entity2 %} {% endblock %}</li>
+                </ul>
+                <ul class="buttons">
+                    <li>
+                        <a href="#" class="link_bcPopupSearch"><span class="icon-search"></span><span class="text">Search</span></a>
+
+                        <div id="bcPopupSearch" class="popup">
+                            <div class="head clearfix">
+                                <div class="arrow"></div>
+                                <span class="isw-zoom"></span>
+                                <span class="name">Search</span>
+                            </div>
+                            <div class="body search">
+                                <input type="text" placeholder="Some text for search..." name="search"/>
+                            </div>
+                            <div class="footer">
+                                <button class="btn" type="button">Search</button>
+                                <button class="btn btn-danger link_bcPopupSearch" type="button">Close</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="workplace">
+
+                <div class="page-header">
+                    <h1>{% block entity %} {% endblock %} <small>{% block action %} {% endblock %}</small></h1>
+                </div>
+
+                <div class="row-fluid">
+                    {% block body %} {% endblock %}
+                </div>
+            </div>
+
+            <div class="dr"><span></span></div>
+
+        </div>
+
+    </div>
+</body>

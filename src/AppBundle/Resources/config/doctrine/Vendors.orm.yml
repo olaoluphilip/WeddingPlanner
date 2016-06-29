@@ -1,0 +1,45 @@
+AppBundle\Entity\Vendors:
+    type: entity
+    table: vendors
+    repositoryClass: AppBundle\Repository\VendorsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '50'
+        address:
+            type: string
+            length: '100'
+        city:
+            type: string
+            length: '50'
+        state:
+            type: string
+            length: '50'
+        country:
+            type: string
+            length: '50'
+        email:
+            type: string
+            length: '50'
+        phone:
+            type: string
+            length: '25'
+        referedBy:
+            type: string
+            length: '50'
+            nullable: true
+        referalPhone:
+            type: string
+            length: '25'
+            nullable: true
+    manyToMany:
+        items:
+          targetEntity: Items
+          mappedBy: vendors
+    lifecycleCallbacks: {  }
