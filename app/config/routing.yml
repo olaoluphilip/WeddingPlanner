@@ -4,6 +4,7 @@ app:
 
 logout:
     path: /logout
+    defaults: { _controller: AppBundle:Security:logout}
 
 login:
     path: /login
@@ -11,107 +12,108 @@ login:
 
 home:
     path: /
+    defaults: { _controller: AppBundle:Default:index}
 
 user_registration:
     path: /register
     defaults: { _controller: AppBundle:Registration:register }
 
-add_couple:
-    path: /couple/add
-    defaults: { _controller: AppBundle:Couple:add }
+couple_new:
+    path: /couple/new
+    defaults: { _controller: AppBundle:Couple:new }
 
-update_couple:
-    path: /couple/update
-    defaults: { _controller: AppBundle:Couple:update }
+couple_edit:
+    path: /couple/edit
+    defaults: { _controller: AppBundle:Couple:edit }
 
-delete_couple:
+couple_delete:
     path: /couple/delete
     defaults: { _controller: AppBundle:Couple:delete }
 
-show_couple:
+couple_show:
     path: /couple/show
     defaults: { _controller: AppBundle:Couple:show }
 
-list_couple:
-    path: /couple/list
-    defaults: { _controller: AppBundle:Couple:list }
+couple_index:
+    path: /couple/index
+    defaults: { _controller: AppBundle:Couple:index }
 
-add_event:
-    path: /event/add
-    defaults: { _controller: AppBundle:Event:add }
+events_new:
+    path: /events/new
+    defaults: { _controller: AppBundle:Events:new }
 
-update_event:
-    path: /event/update
-    defaults: { _controller: AppBundle:Event:update }
+events_edit:
+    path: /events/edit
+    defaults: { _controller: AppBundle:Events:edit }
 
-delete_event:
-    path: /event/delete
-    defaults: { _controller: AppBundle:Event:delete }
+events_delete:
+    path: /events/delete
+    defaults: { _controller: AppBundle:Events:delete }
 
-show_event:
-    path: /event/show
-    defaults: { _controller: AppBundle:Event:show }
+events_show:
+    path: /events/show
+    defaults: { _controller: AppBundle:Events:show }
 
-list_event:
-    path: /event/list
-    defaults: { _controller: AppBundle:Event:list }
+events_index:
+    path: /events/index
+    defaults: { _controller: AppBundle:Events:index }
 
-add_guest:
-    path: /guest/add
-    defaults: { _controller: AppBundle:Guest:add }
+guests_new:
+    path: /guests/new
+    defaults: { _controller: AppBundle:Guests:new }
 
-update_guest:
-    path: /guest/update
-    defaults: { _controller: AppBundle:Guest:update }
+guests_edit:
+    path: /guests/edit
+    defaults: { _controller: AppBundle:Guests:edit }
 
-delete_guest:
-    path: /guest/delete
-    defaults: { _controller: AppBundle:Guest:delete }
+guests_delete:
+    path: /guests/delete
+    defaults: { _controller: AppBundle:Guests:delete }
 
-show_guest:
-    path: /guest/show
-    defaults: { _controller: AppBundle:Guest:show }
+guests_show:
+    path: /guests/show
+    defaults: { _controller: AppBundle:Guests:show }
 
-list_guest:
-    path: /guest/list
-    defaults: { _controller: AppBundle:Guest:list }
+guests_index:
+    path: /guests/index
+    defaults: { _controller: AppBundle:Guests:index }
 
-add_item:
-    path: /item/add
-    defaults: { _controller: AppBundle:Item:add }
+items_new:
+    path: /items/new
+    defaults: { _controller: AppBundle:Items:new }
 
-update_item:
-    path: /item/update
-    defaults: { _controller: AppBundle:Item:update }
+items_edit:
+    path: /items/edit
+    defaults: { _controller: AppBundle:Items:edit }
 
-delete_item:
-    path: /item/delete
-    defaults: { _controller: AppBundle:Item:delete }
+items_delete:
+    path: /items/delete
+    defaults: { _controller: AppBundle:Items:delete }
 
-show_item:
-    path: /item/show
-    defaults: { _controller: AppBundle:Item:show }
+items_show:
+    path: /items/show
+    defaults: { _controller: AppBundle:Items:show }
 
-list_item:
-    path: /item/list
-    defaults: { _controller: AppBundle:Item:list }
+items_index:
+    path: /items/index
+    defaults: { _controller: AppBundle:Items:index }
 
-add_vendor:
-    path: /vendor/add
-    defaults: { _controller: AppBundle:Vendor:add }
+vendors_new:
+    path: /vendors/new
+    defaults: { _controller: AppBundle:Vendors:new }
 
-update_vendor:
-    path: /vendor/update
-    defaults: { _controller: AppBundle:Vendor:update }
+vendors_edit:
+    path: /vendors/edit
+    defaults: { _controller: AppBundle:Vendors:edit }
 
-delete_vendor:
-    path: /vendor/delete
-    defaults: { _controller: AppBundle:Vendor:delete }
+vendors_delete:
+    path: /vendors/delete
+    defaults: { _controller: AppBundle:Vendors:delete }
 
-show_vendor:
-    path: /vendor/show
-    defaults: { _controller: AppBundle:Vendor:show }
+vendors_show:
+    path: /vendors/show
+    defaults: { _controller: AppBundle:Vendors:show }
 
-list_vendor:
-    path: /vendor/list
-    defaults: { _controller: AppBundle:Vendor:list }
+vendors_index:
+    path: /vendors/index
+    defaults: { _controller: AppBundle:Vendors:index }

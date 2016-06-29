@@ -2,8 +2,12 @@
 
 namespace AppBundle\Entity;
 
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
+use Symfony\Component\HttpFoundation\File\File;
 /**
  * Couple
+ * @Vich\Uploadable
  */
 class Couple
 {
@@ -56,6 +60,15 @@ class Couple
      * @var string
      */
     private $image;
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="imageName")
+     *
+     * @var File
+     */
+    private $imageFile;
 
 
     /**
@@ -235,7 +248,34 @@ class Couple
     {
         return $this->image;
     }
-    
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     *
+     * @return Couple
+     */
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        return $this;
+    }
+
+    /**
+     * @return File
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+
     /**
      * Set email
      *

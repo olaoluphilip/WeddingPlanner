@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block user %}Hi {% endblock %}
+{% block breadcrumb %} Home Page {% endblock %}
+{% block entity %}Couple {% endblock %}
+{% block entity2 %}Couple {% endblock %}
+{% block action %}Creation {% endblock %}
+
+{% block body %}
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <div class="head clearfix">
+            <div class="isw-documents"></div>
+            <h1>Couple Creation</h1>
+        </div>
+        <div class="block-fluid">
+
+    {{ form_start(form) }}
+
+            <div class="row-form clearfix">
+                <div class="span2">Firstname:</div>
+                <div class="span5">{{ form_widget(form.firstname ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Middlename:</div>
+                <div class="span5">{{ form_widget(form.middlename ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Lastname:</div>
+                <div class="span5">{{ form_widget(form.lastname ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">E-Mail:</div>
+                <div class="span5">{{ form_widget(form.email ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Mobile Number:</div>
+                <div class="span5">{{ form_widget(form.phone ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Sex:</div>
+                <div class="span2">{{ form_widget(form.sex ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Date of Birth:</div>
+                <div class="span2">{{ form_widget(form.dob) }}
+                    <span>Example: 04/10/2012</span>
+                </div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Role:</div>
+                <div class="span2">{{ form_widget(form.role ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Attach Image:</div>
+                <div class="span2">{{ form_widget(form.image ) }}</div>
+            </div>
+
+            {{ form_widget(form) }}
+            <div class="row-fluid">
+                <div class="span10">
+
+                </div>
+                <div class="span2">
+                    <button type="submit" class="btn btn-block">Create Couple</button>
+                </div>
+            </div>
+    {{ form_end(form) }}
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="dr"><span></span></div>
+    <ul>
+        <li>
+            <a href="{{ path('couple_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

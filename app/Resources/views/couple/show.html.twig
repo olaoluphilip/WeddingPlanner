@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Couple</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ couple.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ couple.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Middlename</th>
+                <td>{{ couple.middlename }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ couple.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ couple.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ couple.phone }}</td>
+            </tr>
+            <tr>
+                <th>Sex</th>
+                <td>{{ couple.sex }}</td>
+            </tr>
+            <tr>
+                <th>Dob</th>
+                <td>{% if couple.dob %}{{ couple.dob|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ couple.role }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ couple.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('couple_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('couple_edit', { 'id': couple.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

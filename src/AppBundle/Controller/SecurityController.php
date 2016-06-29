@@ -34,4 +34,12 @@ class SecurityController extends Controller
         );
     }
 
+    public function logoutAction()
+    {
+        $session = $this->get('session');
+        $session->clear();
+
+        return $this->redirectToRoute('login');
+    }
+
 }

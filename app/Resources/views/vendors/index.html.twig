@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Vendors list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Referedby</th>
+                <th>Referalphone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vendor in vendors %}
+            <tr>
+                <td><a href="{{ path('vendors_show', { 'id': vendor.id }) }}">{{ vendor.id }}</a></td>
+                <td>{{ vendor.name }}</td>
+                <td>{{ vendor.address }}</td>
+                <td>{{ vendor.city }}</td>
+                <td>{{ vendor.state }}</td>
+                <td>{{ vendor.country }}</td>
+                <td>{{ vendor.email }}</td>
+                <td>{{ vendor.phone }}</td>
+                <td>{{ vendor.referedBy }}</td>
+                <td>{{ vendor.referalPhone }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('vendors_show', { 'id': vendor.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('vendors_edit', { 'id': vendor.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('vendors_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

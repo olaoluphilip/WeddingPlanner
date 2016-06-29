@@ -1,0 +1,4 @@
+app_couple:
+    resource: "@AppBundle/Resources/config/routing/couple.php"
+    prefix:   /couple
+

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Guests list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Sex</th>
+                <th>Role</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for guest in guests %}
+            <tr>
+                <td><a href="{{ path('guests_show', { 'id': guest.id }) }}">{{ guest.id }}</a></td>
+                <td>{{ guest.firstname }}</td>
+                <td>{{ guest.lastname }}</td>
+                <td>{{ guest.email }}</td>
+                <td>{{ guest.phone }}</td>
+                <td>{{ guest.sex }}</td>
+                <td>{{ guest.role }}</td>
+                <td>{{ guest.address }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('guests_show', { 'id': guest.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('guests_edit', { 'id': guest.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('guests_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

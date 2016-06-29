@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Items</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ item.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ item.name }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ item.amount }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ item.status }}</td>
+            </tr>
+            <tr>
+                <th>Startdate</th>
+                <td>{% if item.startDate %}{{ item.startDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{{ item.endDate }}</td>
+            </tr>
+            <tr>
+                <th>Amountpaid</th>
+                <td>{{ item.amountPaid }}</td>
+            </tr>
+            <tr>
+                <th>Balance</th>
+                <td>{{ item.balance }}</td>
+            </tr>
+            <tr>
+                <th>Paymentduedate</th>
+                <td>{% if item.paymentDueDate %}{{ item.paymentDueDate|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('items_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('items_edit', { 'id': item.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

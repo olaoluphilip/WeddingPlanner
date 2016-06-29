@@ -32,6 +32,24 @@ class Events
      */
     private $date;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $guests;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $items;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->guests = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->items = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -137,24 +155,6 @@ class Events
     public function getDate()
     {
         return $this->date;
-    }
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $guests;
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $items;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->guests = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->items = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
