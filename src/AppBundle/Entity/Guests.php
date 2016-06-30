@@ -59,7 +59,9 @@ class Guests
     {
         $this->events = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
+    public function __toString() {
+        return $this->firstname;
+    }
     /**
      * Get id
      *

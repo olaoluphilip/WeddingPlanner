@@ -23,17 +23,17 @@
             </tr>
             <tr>
                 <th>Date</th>
-                <td>{% if event.date %}{{ event.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if event.dateOfEvent %}{{ event.dateOfEvent|date('Y-m-d') }}{% endif %}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('event_index') }}">Back to the list</a>
+            <a href="{{ path('events_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
+            <a href="{{ path('events_edit', { 'event': event.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

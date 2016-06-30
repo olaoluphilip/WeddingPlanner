@@ -45,7 +45,7 @@
             <a href="{{ path('guests_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('guests_edit', { 'id': guest.id }) }}">Edit</a>
+            <a href="{{ path('guests_edit', { 'guest': guest.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

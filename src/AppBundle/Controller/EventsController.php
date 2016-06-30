@@ -44,7 +44,7 @@ class EventsController extends Controller
             $em->persist($event);
             $em->flush();
 
-            return $this->redirectToRoute('event_show', array('id' => $event->getId()));
+            return $this->redirectToRoute('events_show', array('event' => $event->getId()));
         }
 
         return $this->render('events/new.html.twig', array(
@@ -82,7 +82,7 @@ class EventsController extends Controller
             $em->persist($event);
             $em->flush();
 
-            return $this->redirectToRoute('event_edit', array('id' => $event->getId()));
+            return $this->redirectToRoute('events_edit', array('event' => $event->getId()));
         }
 
         return $this->render('events/edit.html.twig', array(
@@ -107,7 +107,7 @@ class EventsController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('event_index');
+        return $this->redirectToRoute('events_index');
     }
 
     /**
@@ -120,7 +120,7 @@ class EventsController extends Controller
     private function createDeleteForm(Events $event)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('event_delete', array('id' => $event->getId())))
+            ->setAction($this->generateUrl('events_delete', array('id' => $event->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

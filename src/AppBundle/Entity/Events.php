@@ -21,16 +21,16 @@ class Events
      * @var string
      */
     private $venue;
+    
+    /**
+     * @var \DateTime
+     */
+    private $dateOfEvent;
 
     /**
      * @var int
      */
     private $numberOfGuests;
-
-    /**
-     * @var \DateTime
-     */
-    private $date;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
@@ -49,6 +49,10 @@ class Events
     {
         $this->guests = new \Doctrine\Common\Collections\ArrayCollection();
         $this->items = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function __toString() {
+        return $this->name;
     }
 
     /**
@@ -134,30 +138,6 @@ class Events
     }
 
     /**
-     * Set date
-     *
-     * @param \DateTime $date
-     *
-     * @return Events
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return \DateTime
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
      * Add guest
      *
      * @param Guests $guest
@@ -224,11 +204,6 @@ class Events
     {
         return $this->items;
     }
-    /**
-     * @var \DateTime
-     */
-    private $dateOfEvent;
-
 
     /**
      * Set dateOfEvent

@@ -14,7 +14,7 @@
     <div class="span12">
         <div class="head clearfix">
             <div class="isw-grid"></div>
-            <h1>Sortable table</h1>
+            <h1>Couple's Name</h1>
         </div>
         <div class="block-fluid table-sorting clearfix">
             <table cellpadding="0" cellspacing="0" width="100%" class="table" id="tSortable">
@@ -39,7 +39,7 @@
         {% for couple in couples %}
             <tr>
                 <td><input type="checkbox" name="checkbox"/></td>
-                <td><a href="{{ path('couple_show', { 'id': couple.id }) }}">{{ couple.id }}</a></td>
+                <td><a href="{{ path('couple_show', { 'couple': couple.id }) }}">{{ couple.id }}</a></td>
                 <td>{{ couple.firstname }}</td>
                 <td>{{ couple.middlename }}</td>
                 <td>{{ couple.lastname }}</td>
@@ -54,22 +54,24 @@
                         <button data-toggle="dropdown" class="btn dropdown-toggle">Action <span class="caret"></span></button>
                         <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ path('couple_show', { 'id': couple.id }) }}">show</a>
+                            <a href="{{ path('couple_show', { 'couple': couple.id }) }}">show</a>
                         </li>
                             <li class="divider"></li>
                         <li>
-                            <a href="{{ path('couple_edit', { 'id': couple.id }) }}">edit</a>
+                            <a href="{{ path('couple_edit', { 'couple': couple.id }) }}">edit</a>
                         </li>
                     </ul>
+                        </div>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
+</div>
     <ul>
         <li>
             <a href="{{ path('couple_new') }}"><button class="btn btn-link" type="button">Create a new entry</button></a>
         </li>
     </ul>
+        </div>
 {% endblock %}

@@ -27,10 +27,7 @@ class CoupleType extends AbstractType
                     'Female' => 'Female',
                     'Male' => 'Male',
                 )))
-            ->add('dob', DateType::class, array(
-                'widget' => 'single_text',
-                'html5' => false,
-            ))
+            ->add('dob', DateType::class)
             ->add('role', ChoiceType::class, array(
                 'choices'  => array(
                     'Bride' => 'Bride',

@@ -224,4 +224,33 @@ class Events
     {
         return $this->items;
     }
+    /**
+     * @var \DateTime
+     */
+    private $dateOfEvent;
+
+
+    /**
+     * Set dateOfEvent
+     *
+     * @param \DateTime $dateOfEvent
+     *
+     * @return Events
+     */
+    public function setDateOfEvent($dateOfEvent)
+    {
+        $this->dateOfEvent = $dateOfEvent;
+
+        return $this;
+    }
+
+    /**
+     * Get dateOfEvent
+     *
+     * @return \DateTime
+     */
+    public function getDateOfEvent()
+    {
+        return $this->dateOfEvent;
+    }
 }

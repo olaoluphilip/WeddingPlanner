@@ -53,7 +53,7 @@
             <a href="{{ path('couple_index') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('couple_edit', { 'id': couple.id }) }}">Edit</a>
+            <a href="{{ path('couple_edit', { 'couple': couple.id }) }}">Edit</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

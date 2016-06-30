@@ -45,9 +45,9 @@
             </div>
             <div class="row-form clearfix">
                 <div class="span2">Date of Birth:</div>
-                <div class="span2">{{ form_widget(form.dob) }}
-                    <span>Example: 04/10/2012</span>
-                </div>
+                <div class="span1">{{ form_widget(form.dob.day) }}</div>
+                <div class="span1">{{ form_widget(form.dob.month) }}</div>
+                <div class="span1">{{ form_widget(form.dob.year) }}</div>
             </div>
             <div class="row-form clearfix">
                 <div class="span2">Role:</div>
@@ -77,7 +77,7 @@
     <div class="dr"><span></span></div>
     <ul>
         <li>
-            <a href="{{ path('couple_index') }}">Back to the list</a>
+            <a href="{{ path('couple_index') }}"><button class="btn btn-link" type="button">Back to the list</button></a>
         </li>
     </ul>
 {% endblock %}

@@ -20,7 +20,7 @@ class ItemsType extends AbstractType
             ->add('amount')
             ->add('status')
             ->add('startDate', DateType::class)
-            ->add('endDate')
+            ->add('endDate', DateType::class)
             ->add('amountPaid')
             ->add('balance')
             ->add('paymentDueDate', DateType::class)

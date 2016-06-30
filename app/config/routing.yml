@@ -23,15 +23,15 @@ couple_new:
     defaults: { _controller: AppBundle:Couple:new }
 
 couple_edit:
-    path: /couple/edit
+    path: /couple/edit/{couple}
     defaults: { _controller: AppBundle:Couple:edit }
 
 couple_delete:
-    path: /couple/delete
+    path: /couple/delete/
     defaults: { _controller: AppBundle:Couple:delete }
 
 couple_show:
-    path: /couple/show
+    path: /couple/show/{couple}
     defaults: { _controller: AppBundle:Couple:show }
 
 couple_index:
@@ -43,15 +43,15 @@ events_new:
     defaults: { _controller: AppBundle:Events:new }
 
 events_edit:
-    path: /events/edit
+    path: /events/edit/{event}
     defaults: { _controller: AppBundle:Events:edit }
 
 events_delete:
-    path: /events/delete
+    path: /events/delete/
     defaults: { _controller: AppBundle:Events:delete }
 
 events_show:
-    path: /events/show
+    path: /events/show/{event}
     defaults: { _controller: AppBundle:Events:show }
 
 events_index:
@@ -63,15 +63,15 @@ guests_new:
     defaults: { _controller: AppBundle:Guests:new }
 
 guests_edit:
-    path: /guests/edit
+    path: /guests/edit/{guest}
     defaults: { _controller: AppBundle:Guests:edit }
 
 guests_delete:
-    path: /guests/delete
+    path: /guests/delete/
     defaults: { _controller: AppBundle:Guests:delete }
 
 guests_show:
-    path: /guests/show
+    path: /guests/show/{guest}
     defaults: { _controller: AppBundle:Guests:show }
 
 guests_index:
@@ -79,19 +79,19 @@ guests_index:
     defaults: { _controller: AppBundle:Guests:index }
 
 items_new:
-    path: /items/new
+    path: /items/new/
     defaults: { _controller: AppBundle:Items:new }
 
 items_edit:
-    path: /items/edit
+    path: /items/edit/{item}
     defaults: { _controller: AppBundle:Items:edit }
 
 items_delete:
-    path: /items/delete
+    path: /items/delete/
     defaults: { _controller: AppBundle:Items:delete }
 
 items_show:
-    path: /items/show
+    path: /items/show/{item}
     defaults: { _controller: AppBundle:Items:show }
 
 items_index:
@@ -103,15 +103,15 @@ vendors_new:
     defaults: { _controller: AppBundle:Vendors:new }
 
 vendors_edit:
-    path: /vendors/edit
+    path: /vendors/edit/{vendor}
     defaults: { _controller: AppBundle:Vendors:edit }
 
 vendors_delete:
-    path: /vendors/delete
+    path: /vendors/delete/
     defaults: { _controller: AppBundle:Vendors:delete }
 
 vendors_show:
-    path: /vendors/show
+    path: /vendors/show/{vendor}
     defaults: { _controller: AppBundle:Vendors:show }
 
 vendors_index:
