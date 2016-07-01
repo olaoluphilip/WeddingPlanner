@@ -120,7 +120,7 @@ class EventsController extends Controller
     private function createDeleteForm(Events $event)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('events_delete', array('id' => $event->getId())))
+            ->setAction($this->generateUrl('events_delete', array('event' => $event->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

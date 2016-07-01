@@ -1,21 +1,67 @@
 {% extends 'base.html.twig' %}
 
+{% block user %}Hi {% endblock %}
+{% block breadcrumb %} Home Page {% endblock %}
+{% block entity %}Events {% endblock %}
+{% block entity2 %}Events {% endblock %}
+{% block action %}Edit {% endblock %}
 {% block body %}
-    <h1>Events edit</h1>
+    <div class="row-fluid">
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        <div class="span12">
+            <div class="head clearfix">
+                <div class="isw-documents"></div>
+                <h1>Event Edit</h1>
+            </div>
+            <div class="block-fluid">
 
-    <ul>
-        <li>
-            <a href="{{ path('events_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-{% endblock %}
+                {{ form_start(edit_form) }}
+                <div class="row-form clearfix">
+                    <div class="span2">Name:</div>
+                    <div class="span5">{{ form_widget(edit_form.name ) }}</div>
+                </div>
+                <div class="row-form clearfix">
+                    <div class="span2">Venue:</div>
+                    <div class="span5">{{ form_widget(edit_form.venue ) }}</div>
+                </div>
+                <div class="row-form clearfix">
+                    <div class="span2">Number of Guest:</div>
+                    <div class="span5">{{ form_widget(edit_form.numberOfGuests ) }}</div>
+                </div>
+                <div class="row-form clearfix">
+                    <div class="span2">Date of Event:</div>
+                    <div class="span1">{{ form_widget(edit_form.dateOfEvent.day) }}</div>
+                    <div class="span1">{{ form_widget(edit_form.dateOfEvent.month) }}</div>
+                    <div class="span1">{{ form_widget(edit_form.dateOfEvent.year) }}</div>
+                </div>
+                <div class="row-form clearfix">
+                    <div class="span2">Select Guests:</div>
+                    <div class="span5">{{ form_widget(edit_form.guests ) }}</div>
+                </div>
+                <div class="row-form clearfix">
+                    <div class="span2">Select Items:</div>
+                    <div class="span2">{{ form_widget(edit_form.items, { 'attr': {'multiple': 'multiple'}} ) }}</div>
+                </div>
+
+                <div class="row-fluid">
+                    <div class="span10">
+
+                    </div>
+                    <div class="span2">
+                        <button type="submit" class="btn btn-block" value="EDIT">Create Event</button>
+                    </div>
+                </div>
+                </div>
+                {{ form_end(edit_form) }}
+                <ul>
+                    <li>
+                        <a href="{{ path('couple_index') }}"><button class="btn btn-link" type="button">Back to the list</button></a>
+                    </li>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <button type="submit" class="btn btn-block" value="DELETE">Delete Couple</button>
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div></div>
+        {% endblock %}

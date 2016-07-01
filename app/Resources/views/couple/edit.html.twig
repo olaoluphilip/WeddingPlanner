@@ -1,21 +1,81 @@
 {% extends 'base.html.twig' %}
+{% block user %}Hi {% endblock %}
+{% block breadcrumb %} Home Page {% endblock %}
+{% block entity %}Couple {% endblock %}
+{% block entity2 %}Couple {% endblock %}
+{% block action %}Edit {% endblock %}
 
 {% block body %}
-    <h1>Couple edit</h1>
+
+<div class="row-fluid">
+
+    <div class="span12">
+        <div class="head clearfix">
+            <div class="isw-documents"></div>
+            <h1>Couple Edit</h1>
+        </div>
+        <div class="block-fluid">
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+            <div class="row-form clearfix">
+                <div class="span2">Firstname:</div>
+                <div class="span5">{{ form_widget(edit_form.firstname ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Middlename:</div>
+                <div class="span5">{{ form_widget(edit_form.middlename ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Lastname:</div>
+                <div class="span5">{{ form_widget(edit_form.lastname ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">E-Mail:</div>
+                <div class="span5">{{ form_widget(edit_form.email ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Mobile Number:</div>
+                <div class="span5">{{ form_widget(edit_form.phone ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Sex:</div>
+                <div class="span2">{{ form_widget(edit_form.sex ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Date of Birth:</div>
+                <div class="span1">{{ form_widget(edit_form.dob.day) }}</div>
+                <div class="span1">{{ form_widget(edit_form.dob.month) }}</div>
+                <div class="span1">{{ form_widget(edit_form.dob.year) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Role:</div>
+                <div class="span2">{{ form_widget(edit_form.role ) }}</div>
+            </div>
+            <div class="row-form clearfix">
+                <div class="span2">Attach Image:</div>
+                <div class="span2">{{ form_widget(edit_form.image ) }}</div>
+            </div>
+
+            <div class="row-fluid">
+                <div class="span10">
+
+                </div>
+                <div class="span2">
+                    <button type="submit" class="btn btn-block" value="Edit">Edit Couple</button>
+                </div>
+            </div>
     {{ form_end(edit_form) }}
+        </div>
 
     <ul>
         <li>
-            <a href="{{ path('couple_index') }}">Back to the list</a>
+            <a href="{{ path('couple_index') }}"><button class="btn btn-link" type="button">Back to the list</button></a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <button type="submit" class="btn btn-block" value="DELETE">Delete Couple</button>
             {{ form_end(delete_form) }}
         </li>
     </ul>
+        </div></div>
 {% endblock %}

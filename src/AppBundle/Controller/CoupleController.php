@@ -44,7 +44,7 @@ class CoupleController extends Controller
             $em->persist($couple);
             $em->flush();
 
-            return $this->redirectToRoute('couple_show', array('id' => $couple->getId()));
+            return $this->redirectToRoute('couple_show', array('couple' => $couple->getId()));
         }
 
         return $this->render('couple/new.html.twig', array(
@@ -82,7 +82,7 @@ class CoupleController extends Controller
             $em->persist($couple);
             $em->flush();
 
-            return $this->redirectToRoute('couple_edit', array('id' => $couple->getId()));
+            return $this->redirectToRoute('couple_edit', array('couple' => $couple->getId()));
         }
 
         return $this->render('couple/edit.html.twig', array(
@@ -120,7 +120,7 @@ class CoupleController extends Controller
     private function createDeleteForm(Couple $couple)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('couple_delete', array('id' => $couple->getId())))
+            ->setAction($this->generateUrl('couple_delete', array('couple' => $couple->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

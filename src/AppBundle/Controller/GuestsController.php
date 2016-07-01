@@ -44,7 +44,7 @@ class GuestsController extends Controller
             $em->persist($guest);
             $em->flush();
 
-            return $this->redirectToRoute('guests_show', array('id' => $guest->getId()));
+            return $this->redirectToRoute('guests_show', array('guest' => $guest->getId()));
         }
 
         return $this->render('guests/new.html.twig', array(
@@ -82,7 +82,7 @@ class GuestsController extends Controller
             $em->persist($guest);
             $em->flush();
 
-            return $this->redirectToRoute('guests_edit', array('id' => $guest->getId()));
+            return $this->redirectToRoute('guests_edit', array('guest' => $guest->getId()));
         }
 
         return $this->render('guests/edit.html.twig', array(
@@ -120,7 +120,7 @@ class GuestsController extends Controller
     private function createDeleteForm(Guests $guest)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('guests_delete', array('id' => $guest->getId())))
+            ->setAction($this->generateUrl('guests_delete', array('guest' => $guest->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

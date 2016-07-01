@@ -44,7 +44,7 @@ class ItemsController extends Controller
             $em->persist($item);
             $em->flush();
 
-            return $this->redirectToRoute('items_show', array('id' => $item->getId()));
+            return $this->redirectToRoute('items_show', array('item' => $item->getId()));
         }
 
         return $this->render('items/new.html.twig', array(
@@ -82,7 +82,7 @@ class ItemsController extends Controller
             $em->persist($item);
             $em->flush();
 
-            return $this->redirectToRoute('items_edit', array('id' => $item->getId()));
+            return $this->redirectToRoute('items_edit', array('item' => $item->getId()));
         }
 
         return $this->render('items/edit.html.twig', array(
@@ -120,7 +120,7 @@ class ItemsController extends Controller
     private function createDeleteForm(Items $item)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('items_delete', array('id' => $item->getId())))
+            ->setAction($this->generateUrl('items_delete', array('item' => $item->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

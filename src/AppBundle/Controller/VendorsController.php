@@ -44,7 +44,7 @@ class VendorsController extends Controller
             $em->persist($vendor);
             $em->flush();
 
-            return $this->redirectToRoute('vendors_show', array('id' => $vendor->getId()));
+            return $this->redirectToRoute('vendors_show', array('vendor' => $vendor->getId()));
         }
 
         return $this->render('vendors/new.html.twig', array(
@@ -82,7 +82,7 @@ class VendorsController extends Controller
             $em->persist($vendor);
             $em->flush();
 
-            return $this->redirectToRoute('vendors_edit', array('id' => $vendor->getId()));
+            return $this->redirectToRoute('vendors_edit', array('vendor' => $vendor->getId()));
         }
 
         return $this->render('vendors/edit.html.twig', array(
@@ -120,7 +120,7 @@ class VendorsController extends Controller
     private function createDeleteForm(Vendors $vendor)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('vendors_delete', array('id' => $vendor->getId())))
+            ->setAction($this->generateUrl('vendors_delete', array('vendor' => $vendor->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;

@@ -27,7 +27,7 @@ couple_edit:
     defaults: { _controller: AppBundle:Couple:edit }
 
 couple_delete:
-    path: /couple/delete/
+    path: /couple/delete/{couple}
     defaults: { _controller: AppBundle:Couple:delete }
 
 couple_show:
@@ -47,7 +47,7 @@ events_edit:
     defaults: { _controller: AppBundle:Events:edit }
 
 events_delete:
-    path: /events/delete/
+    path: /events/delete/{event}
     defaults: { _controller: AppBundle:Events:delete }
 
 events_show:
@@ -67,7 +67,7 @@ guests_edit:
     defaults: { _controller: AppBundle:Guests:edit }
 
 guests_delete:
-    path: /guests/delete/
+    path: /guests/delete/{guest}
     defaults: { _controller: AppBundle:Guests:delete }
 
 guests_show:
@@ -87,7 +87,7 @@ items_edit:
     defaults: { _controller: AppBundle:Items:edit }
 
 items_delete:
-    path: /items/delete/
+    path: /items/delete/{item}
     defaults: { _controller: AppBundle:Items:delete }
 
 items_show:
@@ -107,7 +107,7 @@ vendors_edit:
     defaults: { _controller: AppBundle:Vendors:edit }
 
 vendors_delete:
-    path: /vendors/delete/
+    path: /vendors/delete/{vendor}
     defaults: { _controller: AppBundle:Vendors:delete }
 
 vendors_show:
